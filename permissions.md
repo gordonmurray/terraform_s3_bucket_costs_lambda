@@ -130,3 +130,14 @@ Below is the policy JSON you can use to create an IAM user for Terraform with th
 aws_access_key_id = your_terraform_access_key_id
 aws_secret_access_key = your_terraform_secret_access_key
 ```
+
+
+
+# [tfsec] Results
+
+## 2 issue(s)
+| # | ID | Severity | Title | Location | Description |
+|---|----|----------|-------|----------|-------------|
+| 1 | `aws-iam-no-policy-wildcards` | *HIGH* | _IAM policy should avoid use of wildcards and instead apply the principle of least privilege_ | `aws_iam_role.tf:25` | IAM policy document uses sensitive action 's3:ListBucket' on wildcarded resource '*' |
+| 2 | `aws-lambda-enable-tracing` | *LOW* | _Lambda functions should have X-Ray tracing enabled_ | `aws_lambda_function.tf:3-17` | Function does not have tracing enabled. |
+

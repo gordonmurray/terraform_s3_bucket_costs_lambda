@@ -41,17 +41,16 @@ Bucket: my-test-bucket, Size: 0.29 GB, Location: None
 
 ### Esimated running costs
 
-Assuming the lambda runs once a month and takes 10 minutues to run:
+Assuming the lambda runs once a month and takes 60 minutues to run:
 
 ```
-
  Name                            Monthly Qty  Unit         Monthly Cost
 
  aws_lambda_function.s3_summary
  ├─ Requests                          0.0000  1M requests         $0.00  *
- └─ Duration (first 6B)                   75  GB-seconds          $0.00  *
+ └─ Duration (first 6B)                  450  GB-seconds          $0.01  *
 
- OVERALL TOTAL                                                    $0.00
+ OVERALL TOTAL                                                    $0.01
 
 *Usage costs were estimated using infracost-usage.yml, see docs for other options.
 
@@ -63,6 +62,6 @@ Assuming the lambda runs once a month and takes 10 minutues to run:
 ┏━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━┳━━━━━━━━━━━━┓
 ┃ Project                                            ┃ Baseline cost ┃ Usage cost* ┃ Total cost ┃
 ┣━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━━━╋━━━━━━━━━━━━━╋━━━━━━━━━━━━┫
-┃ main                                               ┃ $0.00         ┃ $0.00       ┃ $0.00      ┃
+┃ main                                               ┃ $0.00         ┃ $0.01       ┃ $0.01      ┃
 ┗━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━━━┻━━━━━━━━━━━━━┻━━━━━━━━━━━━┛
 ```
