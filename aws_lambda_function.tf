@@ -19,7 +19,7 @@ resource "aws_lambda_function" "s3_summary" {
 # Create CloudWatch Event rule
 resource "aws_cloudwatch_event_rule" "daily_run" {
   name                = "daily_run"
-  schedule_expression = "rate(5 minutes)"
+  schedule_expression = "cron(0 0 1 * ? *)"  # At 00:00 UTC on the 1st day of every month
 }
 
 # Create CloudWatch Event target

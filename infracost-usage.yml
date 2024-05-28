@@ -1,0 +1,6 @@
+version: 0.1
+
+resource_usage:
+  aws_lambda_function.s3_summary:
+    monthly_requests: 1
+    request_duration_ms: 600000  # Assuming 10 minutes to run
